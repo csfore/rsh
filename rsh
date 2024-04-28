@@ -1,7 +1,7 @@
 #!/bin/bash
 
 preexec() {
-	# In true autotools fashion
+	# In true autotools fashion (also skips that command called a lot)
 	if [ "x$BASH_COMMAND" = "xgenfun_set_win_title" ]; then
 		return
 	fi
@@ -15,7 +15,7 @@ preexec() {
 		return
 	fi
 	
-	# Gettings just the package
+	# Getting just the package
 	FILE=$(qfile $CLEAN_CMD | grep "/usr/bin" | awk -F ':' '{ print $1 }')
 	
 	# Generating a hash for unique and robustness
