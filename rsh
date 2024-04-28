@@ -1,7 +1,7 @@
 #!/bin/bash
 
 preexec() {
-	# In true autotools fashion (also skips that command called a lot)
+	# In true autotools fashion (also skips command that's called a lot)
 	if [ "x$BASH_COMMAND" = "xgenfun_set_win_title" ]; then
 		return
 	fi
